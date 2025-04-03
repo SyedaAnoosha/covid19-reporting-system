@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Data Dashboard - Pakistan</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>COVID-19 Data Dashboard - Pakistan</h1>
+  </header>
+  
+  <main class="container">
+    <section id="filters" class="card">
+      <h2>Filters</h2>
+      <div class="filter-group">
+        <label for="province">Province:</label>
+        <select id="province">
+          <option value="">All Provinces</option>
+        </select>
+        
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+        
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+        
+        <button onclick="fetchData()">Apply Filters</button>
+      </div>
+    </section>
+    
+    <section id="summary-table" class="card">
+      <h2>Summary by Province</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Province</th>
+            <th>Total Cases</th>
+            <th>Total Deaths</th>
+            <th>Total Recovered</th>
+            <th>Total Active</th>
+          </tr>
+        </thead>
+        <tbody id="summary-table-body"></tbody>
+      </table>
+      <p class="link"><a href="full-data.html">View Full Data</a></p>
+    </section>
+    
+    <section id="visualizations" class="card">
+      <h2>Visualizations</h2>
+      <div class="chart-container">
+        <h3>Cases, Deaths, and Recoveries Over Time</h3>
+        <canvas id="trends-chart" width="400" height="200"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Total Cases by Province</h3>
+        <canvas id="province-chart" width="400" height="200"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Geographic Distribution</h3>
+        <div id="map" style="height: 400px;"></div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

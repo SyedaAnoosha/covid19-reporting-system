@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Full Data - Pakistan</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1>COVID-19 Full Data - Pakistan</h1>
+    <p class="link"><a href="index.html">Back to Dashboard</a></p>
+  </header>
+  
+  <main class="container">
+    <section id="filters" class="card">
+      <h2>Filters</h2>
+      <div class="filter-group">
+        <label for="province">Province:</label>
+        <select id="province">
+          <option value="">All Provinces</option>
+        </select>
+        
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+        
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+        
+        <button onclick="fetchFullData()">Apply Filters</button>
+      </div>
+    </section>
+    
+    <section id="data-table" class="card">
+      <h2>Full Data Table</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Province</th>
+            <th>City</th>
+            <th>Cases</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+            <th>Active Cases</th>
+            <th>Travel History</th>
+          </tr>
+        </thead>
+        <tbody id="full-table-body"></tbody>
+      </table>
+    </section>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
